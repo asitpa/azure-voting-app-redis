@@ -1,3 +1,3 @@
-FROM tiangolo/uwsgi-nginx-flask:python3.6
+FROM tiangolo/uwsgi-nginx
 RUN pip install redis
 ADD /azure-vote /app
