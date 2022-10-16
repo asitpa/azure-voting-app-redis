@@ -69,6 +69,7 @@ pipeline {
             }
         
       }
+         }
                   stage('Deploy to Prod') {
          environment {
             ENVIRONMENT = 'prod'
@@ -86,4 +87,3 @@ pipeline {
          }
       }
     }
-}
