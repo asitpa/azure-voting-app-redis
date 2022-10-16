@@ -67,6 +67,21 @@ pipeline {
                    """)
                }
             }
+             stage('Deploy to QA') {
+         environment {
+            ENVIRONMENT = 'prod'
+         }
+         steps {
+            echo "Deploying to ${ENVIRONMENT}"
+            acsDeploy(
+               azureCredentialsId: "AzureCred",
+               configFilePaths: "**/*.yaml",
+               containerService: "prod_kub | AKS",
+               resourceGroupName: "prod_kub",
+               sshCredentialsId: ""
+            )
+         }
+      }
          }
       }
     }
