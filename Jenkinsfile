@@ -67,7 +67,9 @@ pipeline {
                    """)
                }
             }
-             stage('Deploy to Prod') {
+        
+      }
+                  stage('Deploy to Prod') {
          environment {
             ENVIRONMENT = 'prod'
          }
@@ -81,7 +83,6 @@ pipeline {
                sshCredentialsId: ""
             )
          }
-      }
          }
       }
     }
