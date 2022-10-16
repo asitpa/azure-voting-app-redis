@@ -67,7 +67,7 @@ pipeline {
                    """)
                }
             }
-             stage('Deploy to QA') {
+             stage('Deploy to Prod') {
          environment {
             ENVIRONMENT = 'prod'
          }
