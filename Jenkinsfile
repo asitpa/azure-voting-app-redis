@@ -63,7 +63,7 @@ pipeline {
                steps {
                   sleep(time: 30, unit: 'SECONDS')
                    pwsh(script: """
-                   C:\\Windows\\System32\\wsl.exe -- sudo trivy blackdentech/jenkins-course
+                   ubuntu run trivy image --format template --template "@contrib/html.tpl" -o trivy-report$BUILD_NUMBER.html  python:3.4-alpine --security-checks vuln
                    """)
                }
             }
